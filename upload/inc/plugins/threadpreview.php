@@ -55,11 +55,11 @@ function threadpreview_preview()
 	}
 
 	$parser_options = array(
-		"allow_html" => (int)$mybb->settings[$prefix.'profile_box_post_allowhtml'],
-		"allow_mycode" => (int)$mybb->settings[$prefix.'profile_box_post_allowmycode'],
-		"allow_smilies" => (int)$mybb->settings[$prefix.'profile_box_post_allowsmilies'],
-		"allow_imgcode" => (int)$mybb->settings[$prefix.'profile_box_post_allowimgcode'],
-		"allow_videocode" => (int)$mybb->settings[$prefix.'profile_box_post_allowvideocode'],
+		"allow_html" => (int)$mybb->settings['pmsallowhtml'],
+		"allow_mycode" => (int)$mybb->settings['pmsallowmycode'],
+		"allow_smilies" => (int)$mybb->settings['pmsallowsmilies'],
+		"allow_imgcode" => (int)$mybb->settings['pmsallowimgcode'],
+		"allow_videocode" => (int)$mybb->settings['pmsallowvideocode'],
 		"nofollow_on" => 1,
 		"filter_badwords" => 1
 	);
