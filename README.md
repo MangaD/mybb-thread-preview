@@ -12,11 +12,11 @@ This plugin is an improvement of the original plugin by `dragonexpert` that can 
 <script>
 	function make_visible(tid)
 	{
-	document.getElementById("preview" + tid).style.display="block";
+		document.getElementById("preview" + tid).style.display="block";
 	}
 	function make_hidden(tid)
 	{
-	document.getElementById("preview" + tid).style.display="none";
+		document.getElementById("preview" + tid).style.display="none";
 	}
 </script>
 <!-- Thread Preview - End -->
@@ -48,29 +48,29 @@ Right after that add this:
 /* Thread preview - START */
 .thread_preview {
 	position: absolute;
-    margin-top: 10px;
- 	border: 1px solid #ccc;
+	margin-top: 10px;
+	border: 1px solid #ccc;
 	background: #fff;
-    max-width: 300px;
+	max-width: 300px;
 	z-index:2;
 	word-wrap: break-word;
 	padding: 5px;
 	text-align: justify;
 }
 .thread_preview::after, .thread_preview::before {
-    bottom: 100%;
-    left: 20%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
+	bottom: 100%;
+	left: 20%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
 }
 .thread_preview::before {
-    border-bottom-color: #ccc;
-    border-width: 11px;
-    margin-left: -11px;
+	border-bottom-color: #ccc;
+	border-width: 11px;
+	margin-left: -11px;
 }
 /* Thread preview - END */
 ```
