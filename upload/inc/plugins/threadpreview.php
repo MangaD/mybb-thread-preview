@@ -11,12 +11,12 @@ function threadpreview_info()
 	return array(
 		"name"			=> "Thread Preview",
 		"description"	=> "Shows a part of the first post of a thread on forumdisplay when hovered over.",
-		"website"		=> "http://mybb.com",
-		"author"		=> "Mark Janssen",
-		"authorsite"	=> "http://mybb.com",
+		"website"		=> "https://github.com/MangaD/mybb-thread-preview",
+		"author"		=> "MangaD",
+		"authorsite"	=> "https://github.com/MangaD/mybb-thread-preview",
 		"version"		=> "1.0",
 		"guid" 			=> "",
-		"compatibility" => "*"
+		"compatibility" => "18*"
 	);
 }
 

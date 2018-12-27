@@ -1,6 +1,6 @@
 # [MyBB Plugin] Thread Preview
 
-This plugin is an improvement of the original plugin by `dragonexpert` that can be found [here](https://mods.mybb.com/view/thread-preview). It displays a preview box of the thread content when hovering over the subject in the forum display.
+This plugin is an improvement of the original plugin by Mark Janssen (dragonexpert) that can be found [here](https://mods.mybb.com/view/thread-preview). It displays a preview box of the thread content when hovering over the subject in the forum display.
 
 ## Installation:
 
