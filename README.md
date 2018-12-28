@@ -4,7 +4,7 @@ This plugin is an improvement of the original plugin by Mark Janssen (dragonexpe
 
 ## Installation:
 
-1. Upload `threadpreview.php` to `inc/plugins` folder.
+1. Upload `upload/inc/plugins/threadpreview.php` to `inc/plugins` folder.
 
 2. Go to `forumdisplay` template. After `{$footer}` paste the following code:
 ```js
@@ -79,7 +79,7 @@ Right after that add this:
 
 ## Customization
 
-You may change how many characters to display in the preview by editing the file `threadpreview.php` (find 200 and replace with your own value).
+You can change how many characters to display in the preview at the ACP settings.
 
 
 
