@@ -14,10 +14,70 @@ function threadpreview_info()
 		"website"		=> "https://github.com/MangaD/mybb-thread-preview",
 		"author"		=> "MangaD",
 		"authorsite"	=> "https://github.com/MangaD/mybb-thread-preview",
-		"version"		=> "1.0",
+		"version"		=> "1.2",
 		"guid" 			=> "",
 		"compatibility" => "18*"
 	);
+}
+
+function threadpreview_install()
+{
+	global $db;
+
+	$result = $db->simple_select('settinggroups', 'MAX(disporder) AS max_disporder');
+	$max_disporder = $db->fetch_field($result, 'max_disporder');
+	$disporder = 1;
+
+	//create settings
+	$settings_group = array(
+		'gid'			=> 'NULL',
+		'name'			=> 'threadpreview',
+		'title'			=> 'Thread Preview',
+		'description'	=> "Here you can configure the Thread Preview plugin.",
+		'disporder'		=> $max_disporder + 1,
+		'isdefault'		=> '0'
+	);
+	$db->insert_query('settinggroups', $settings_group);
+	$gid = (int) $db->insert_id();
+	
+	$setting = array(
+		'sid'			=> 'NULL',
+		'name'			=> 'threadpreview_maxlength',
+		'title'			=> "Maximum characters",
+		'description'	=> "How many characters should be displayed in the thread preview?",
+		'optionscode'	=> 'numeric',
+		'value'			=> '200',
+		'disporder'		=> $disporder++,
+		'gid'			=> $gid
+	);
+	$db->insert_query('settings', $setting);
+	
+	rebuild_settings();
+}
+
+function threadpreview_is_installed()
+{
+	global $mybb;
+
+	// Are the settings present?
+	return (isset($mybb->settings['threadpreview_maxlength']));
+}
+
+function threadpreview_uninstall()
+{
+	global $db;
+
+	// Remove settings
+	$result = $db->simple_select('settinggroups', 'gid', "name = 'threadpreview'");
+	$gid = (int) $db->fetch_field($result, "gid");
+	
+	if ($gid > 0)
+	{
+		$db->delete_query('settings', "gid = '{$gid}'");
+	}
+	$db->delete_query('settinggroups', "gid = '{$gid}'");
+
+	rebuild_settings();
 }
 
 function threadpreview_activate()
@@ -41,8 +101,8 @@ function threadpreview_preview()
 		while($data = $db->fetch_array($query))
 		{
 			// Change the third parameter of the substr function to however many characters you wish the preview to have.
-			$firstpostcache[$data['tid']] = substr($data['message'], 0, 200);
-			$threadcache[$data['tid']]['preview'] = substr($data['message'], 0 , 200);
+			$firstpostcache[$data['tid']] = substr($data['message'], 0, (int)$mybb->settings['threadpreview_maxlength']);
+			$threadcache[$data['tid']]['preview'] = substr($data['message'], 0 , (int)$mybb->settings['threadpreview_maxlength']);
 		}
 	}
 
