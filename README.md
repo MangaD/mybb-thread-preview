@@ -85,7 +85,5 @@ You can change how many characters to display in the preview at the ACP settings
 
 ## Todo
 
-- Add elipsis after text in case it has continuation
-- Don't break words
 - ignore certain types of mycode (select types in ACP options)
 
