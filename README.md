@@ -46,6 +46,8 @@ Right after that add this:
 
 5. Add following CSS (change colours and other things to your liking):
 
+   `ACP -> Templates & Style -> Themes -> <Your theme> -> <CSS file of your choosing (must be attacked to forumdisplay.php)>`
+
 ```css
 /* Thread preview - START */
 .thread_preview {
