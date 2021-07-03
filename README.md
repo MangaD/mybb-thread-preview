@@ -38,7 +38,9 @@ You may add an html comment for documentation if you like.
 Right after that add this:
 ```html
 <!-- Thread Preview - Start -->
-<div style="display:none"  id="preview{$thread['tid']}" class="thread_preview">{$thread['preview']}</div>
+<div style="display:none"  id="preview{$thread['tid']}" class="thread_preview">
+    {$thread['preview']}
+</div>
 <!-- Thread Preview - End -->
 ```
 
@@ -81,5 +83,9 @@ Right after that add this:
 
 You can change how many characters to display in the preview at the ACP settings.
 
+## Todo
 
+- Add elipsis after text in case it has continuation
+- Don't break words
+- ignore certain types of mycode (select types in ACP options)
 
