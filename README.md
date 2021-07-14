@@ -22,7 +22,7 @@ This plugin is an improvement of the original plugin by Mark Janssen (dragonexpe
 <!-- Thread Preview - End -->
 ```
 
-3. Go to `forumdisplay_thread` template.  Locate the line that has the thread subject.  Add the following to the element (`span` or `a` as you wish):
+3. Go to `forumdisplay_thread` template.  Locate the line that has the thread subject.  Add the following to the element's attributes (`span` or `a` as you wish):
 ```html
 onmouseover="make_visible({$thread['tid']})" onmouseout="make_hidden({$thread['tid']})"
 ```
